@@ -1,0 +1,10 @@
+title: Amado Sierra
+description: Notes and posts from Amado Sierra
+theme: minima
+baseurl: ""
+url: "https://nsierraj.github.io"
+
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
