@@ -1,0 +1,11 @@
+#  Sharing options at the bottom of the post.
+#  Icons from <https://fontawesome.com/>
+
+platforms:
+  - type: Linkedin
+    icon: "fab fa-linkedin"
+    link: "https://www.linkedin.com/feed/?shareActive=true&shareUrl=URL"
+
+  - type: Twitter
+    icon: "fa-brands fa-square-x-twitter"
+    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"

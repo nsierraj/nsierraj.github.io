@@ -1,0 +1,17 @@
+#  The contact options shown at the bottom of the sidebar.
+#  Icons from <https://fontawesome.com/>
+
+- type: github
+  icon: "fab fa-github"
+
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/amadosierra/"
+
+- type: servicenow
+  icon: "fas fa-graduation-cap"
+  url: "https://learning.servicenow.com/lxp/en/pages/nl-public-resume?id=nl_public&user=amadosierr961983"
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
