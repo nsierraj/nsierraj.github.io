@@ -1,0 +1,44 @@
+// Blue accent palette
+//
+// Chirpy's default accent hue is used sparingly (links, active sidebar tab,
+// TOC highlight). This override keeps every one of those touch points on a
+// single blue hue, at two lightness/saturation steps tuned for the two
+// backgrounds they sit on, so the brand color reads as consistent rather
+// than a patchwork of different blues:
+//
+//   - #1a4fa0 (deep navy) for light backgrounds (~7.8:1 contrast on white,
+//     exceeds WCAG AAA for normal text).
+//   - #6ea8fe (soft sky blue) for dark backgrounds — the same hue lightened
+//     enough to stay legible against a near-black page, matching the value
+//     Bootstrap 5's dark mode uses for the same reason.
+//
+// Only accent/foreground colors are touched here, not any background, so
+// existing text/background contrast pairings elsewhere in the theme are
+// unaffected.
+
+:root,
+html[data-mode="light"] {
+  --link-color: #1a4fa0;
+  --toc-highlight: #1a4fa0;
+  --sidebar-active-color: #1a4fa0;
+  --sidebar-hover-color: #1a4fa0;
+  --sidebar-active-border-color: #1a4fa0;
+}
+
+html[data-mode="dark"] {
+  --link-color: #6ea8fe;
+  --toc-highlight: #6ea8fe;
+  --sidebar-active-color: #6ea8fe;
+  --sidebar-hover-color: #6ea8fe;
+  --sidebar-active-border-color: #6ea8fe;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --link-color: #6ea8fe;
+    --toc-highlight: #6ea8fe;
+    --sidebar-active-color: #6ea8fe;
+    --sidebar-hover-color: #6ea8fe;
+    --sidebar-active-border-color: #6ea8fe;
+  }
+}
