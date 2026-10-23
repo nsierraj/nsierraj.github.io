@@ -35,6 +35,7 @@ tags: [tag1, tag2]
 - Other theme customization: override files from the gem per standard Jekyll theme-override conventions (`bundle info --path beautiful-jekyll-theme`).
 
 ## Gotchas
+- `timezone: UTC` in `_config.yml` must match the `-0000` offset in post front matter. With a local timezone (it was `America/New_York`), a post dated `... 00:00:00 -0000` rendered as the previous day on the home page, tags page and feed.
 - External links get `target="_blank" rel="noopener noreferrer"` automatically at build time via the `jekyll-target-blank` plugin (Gemfile + `plugins:` in `_config.yml`), including theme-generated ones; no per-link markup is needed in posts.
 - `head-extra` replaces rather than merges: both `defaults:` scopes list `["favicons.html", "site-theme.html"]`, and any page that sets its own `head-extra` must repeat both or it loses the theme CSS and pre-paint theme script.
 - Don't override `_includes/head.html` — it holds Beautiful Jekyll's meta/OG-tag/analytics logic. To add `<head>` content, add filenames to a page's (or a `defaults:` scope's) `head-extra:` list instead, as `_config.yml` already does for `favicons.html`.

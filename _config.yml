@@ -13,7 +13,7 @@ url: "https://nsierraj.github.io"
 url-pretty: "nsierraj.github.io"
 baseurl: ""
 
-timezone: America/New_York
+timezone: UTC
 
 navbar-links:
   About: "/about/"
