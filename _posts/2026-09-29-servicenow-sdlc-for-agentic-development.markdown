@@ -3,7 +3,7 @@ layout: post
 title:  "ServiceNow SDLC for Agentic Development"
 date:   2026-09-29 00:00:00 -0000
 categories: general
-tags: [servicenow]
+tags: [servicenow, ai, agentic-development, devops]
 ---
 I shared some thoughts on LinkedIn about adapting the ServiceNow SDLC for AI
 agents: converting metadata to TypeScript for better type-checking, using

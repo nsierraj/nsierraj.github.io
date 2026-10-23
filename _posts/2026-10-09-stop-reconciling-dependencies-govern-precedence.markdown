@@ -3,7 +3,7 @@ layout: post
 title:  "Stop Reconciling Dependencies. Govern the Precedence of Tools"
 date:   2026-10-09 00:00:00 -0000
 categories: general
-tags: [servicenow]
+tags: [servicenow, cmdb, governance, automation]
 ---
 Discovery, observability, and your cloud provider will never agree on what
 depends on what, and a project to reconcile them into the CMDB rarely finishes.
