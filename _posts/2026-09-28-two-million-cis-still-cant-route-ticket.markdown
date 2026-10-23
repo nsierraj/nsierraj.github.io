@@ -3,7 +3,7 @@ layout: post
 title:  "Two Million CIs, and It Still Can't Route a Ticket"
 date:   2026-09-28 00:00:00 -0000
 categories: general
-tags: [servicenow]
+tags: [servicenow, cmdb, architecture]
 ---
 I published a new article on LinkedIn about why successful CSDM implementations
 focus on modeling only the elements that directly impact workflows, rather than

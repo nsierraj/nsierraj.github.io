@@ -3,7 +3,7 @@ layout: post
 title:  "Stop Asking Where AI Can Help. Ask Which Fixes Repeat"
 date:   2026-10-22 00:00:00 -0000
 categories: general
-tags: [servicenow]
+tags: [servicenow, ai, itsm, automation]
 ---
 I published a new article on LinkedIn about choosing AI automation targets from
 incident data instead of agent demos: rank recurring work by total hours rather
