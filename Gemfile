@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 gem "beautiful-jekyll-theme", "~> 6.0"
+gem "jekyll-target-blank", "~> 2.0"
 
 gem "html-proofer", "~> 5.0", group: :test
 
