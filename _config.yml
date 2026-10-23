@@ -18,7 +18,6 @@ timezone: America/New_York
 navbar-links:
   About: "/about/"
   Tags: "/tags/"
-  ServiceNow Learning: "https://learning.servicenow.com/lxp/en/pages/nl-public-resume?id=nl_public&user=amadosierr961983"
 
 # the avatar in the navbar, support local or CORS resources
 avatar: "/favicon.svg"
