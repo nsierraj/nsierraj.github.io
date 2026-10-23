@@ -1,0 +1,20 @@
+{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+{% if page.title %}
+<section class="page-hero ink">
+  <div class="wrap">
+    {%- if include.type == "post" -%}
+      <p class="eyebrow">
+        {{ page.date | date: date_format }}
+        {%- if page.last-updated %} · Updated {{ page.last-updated | date: date_format }}{% endif -%}
+        {%- if page.readtime %} · {% assign words = page.content | strip_html | number_of_words %}{% assign mins = words | divided_by: 200 | at_least: 1 %}{{ mins }} min read{% endif -%}
+      </p>
+    {%- elsif page.eyebrow -%}
+      <p class="eyebrow">{{ page.eyebrow }}</p>
+    {%- endif -%}
+    <h1>{{ page.title | strip_html }}</h1>
+    {%- if page.subtitle %}
+    <p class="lede">{{ page.subtitle | strip_html }}</p>
+    {%- endif %}
+  </div>
+</section>
+{% endif %}

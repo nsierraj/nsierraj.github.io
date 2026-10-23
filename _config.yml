@@ -19,9 +19,8 @@ navbar-links:
   About: "/about/"
   Tags: "/tags/"
 
-# the avatar in the navbar, support local or CORS resources
+# og:image fallback (the header brand mark reads /favicon.svg directly)
 avatar: "/favicon.svg"
-round-avatar: false
 
 social-network-links:
   github: nsierraj
@@ -39,18 +38,10 @@ feed_show_excerpt: true
 feed_show_tags: true
 date_format: "%B %-d, %Y"
 
-# Color scheme — carries over the site's dark-blue accent color
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#1a4fa0"
-hover-col: "#153f80"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#1a4fa0"
+# Colors, type and spacing live in assets/css/site.css (design tokens, light + dark), not here.
+# The theme's color keys (page-col, link-col, navbar-col, ...) are deliberately unset.
+site-js:
+  - "/assets/js/theme.js"
 
 markdown: kramdown
 highlighter: rouge
@@ -74,12 +65,12 @@ defaults:
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /posts/:title/
-      head-extra: ["favicons.html"]
+      head-extra: ["favicons.html", "site-theme.html"]
   - scope:
       path: ""
     values:
       layout: page
-      head-extra: ["favicons.html"]
+      head-extra: ["favicons.html", "site-theme.html"]
 
 exclude:
   - "*.gem"

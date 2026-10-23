@@ -1,0 +1,59 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<main id="main" class="wrap section">
+  {% if content != "" %}
+  <div class="prose home-intro">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  {% assign posts = paginator.posts | default: site.posts %}
+  {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+
+  <h2 class="section-label">Latest posts</h2>
+  <ul class="post-list" role="list">
+    {% for post in posts %}
+    <li>
+      <article class="post-card">
+        <p class="post-card-meta">{{ post.date | date: date_format }}</p>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></h3>
+        {% if post.subtitle %}<p class="post-card-subtitle">{{ post.subtitle | strip_html }}</p>{% endif %}
+
+        {% unless site.feed_show_excerpt == false %}
+        <p class="post-card-excerpt">
+          {% assign excerpt_length = site.excerpt_length | default: 50 %}
+          {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+        </p>
+        {% endunless %}
+
+        {% if site.feed_show_tags != false and post.tags.size > 0 %}
+        <ul class="chips" role="list">
+          {% for tag in post.tags %}
+          <li><a class="chip" href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="pager" aria-label="Pagination">
+    {% if paginator.previous_page %}
+    <a class="pager-link pager-link--prev" href="{{ paginator.previous_page_path | relative_url }}">
+      <span class="pager-dir">&larr; Newer posts</span>
+    </a>
+    {% endif %}
+    {% if paginator.next_page %}
+    <a class="pager-link pager-link--next" href="{{ paginator.next_page_path | relative_url }}">
+      <span class="pager-dir">Older posts &rarr;</span>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</main>

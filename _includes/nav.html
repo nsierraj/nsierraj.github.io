@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="wrap wrap--wide nav">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-mark" src="{{ '/favicon.svg' | relative_url }}" alt="" width="34" height="34">
+      <span>{{ site.title }}</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        {%- for link in site.navbar-links -%}
+          {%- assign href = link[1] | relative_url -%}
+          <li><a href="{{ href }}"{% if page.url == link[1] %} aria-current="page"{% endif %}>{{ link[0] }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch color theme">
+        <span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>

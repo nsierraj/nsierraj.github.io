@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="wrap wrap--wide">
+    <div class="footer-social">
+      {% include social-networks-links.html %}
+    </div>
+    {% if page.footer-extra %}
+      <div class="footer-custom-content">
+        {% for file in page.footer-extra %}
+          {% include {{ file }} %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <p class="copyright">
+      {% if site.author %}{{ site.author }} &middot; {% endif %}{{ site.time | date: '%Y' }}
+      {% if site.url-pretty %}&middot; <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>{% endif %}
+    </p>
+    {% unless site.remove-ads %}<p class="theme-by">Built with <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://beautifuljekyll.com">Beautiful Jekyll</a></p>{% endunless %}
+  </div>
+</footer>
