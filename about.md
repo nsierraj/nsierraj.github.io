@@ -14,4 +14,4 @@ Most companies keep two platforms apart: the service platform employees depend o
 
 25 years. One through-line: **self-service under governance.**
 
-**Building a platform team?** [Let's talk on LinkedIn](https://www.linkedin.com/in/amadosierra/) · [ServiceNow certifications](https://learning.servicenow.com/lxp/en/pages/nl-public-resume?id=nl_public&user=amadosierr961983)
+**Building a platform team?** [Let's talk on LinkedIn](https://www.linkedin.com/in/amadosierra/)
