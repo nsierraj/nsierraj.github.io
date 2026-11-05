@@ -3,6 +3,8 @@
 ## Overview
 Personal Jekyll blog for Amado Sierra, hosted on GitHub Pages at https://nsierraj.github.io, using the [Beautiful Jekyll](https://beautifuljekyll.com) theme (`beautiful-jekyll-theme` gem, Jekyll 4). Deployment is via the GitHub Actions workflow `.github/workflows/pages-deploy.yml` on push to `main` (repo Settings → Pages → Source must be "GitHub Actions"). The workflow builds, runs `htmlproofer` (internal links only), and deploys.
 
+`main` is protected: changes need a PR, and the `site-check` job in `.github/workflows/pr-check.yml` must pass (same build and link check as the deploy). This applies to admins too. Branches are deleted automatically on merge.
+
 ## Commands
 Requires Ruby >= 3.1 (macOS system Ruby 2.6 is too old; locally Homebrew `ruby@3.3` is used).
 ```
