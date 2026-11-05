@@ -1,0 +1,40 @@
+name: "PR Check"
+
+# Required by branch protection on main. Don't add path filters: a required
+# check that gets skipped stays pending and blocks the merge.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pr-check-${{ github.event.pull_request.number }}"
+  cancel-in-progress: true
+
+jobs:
+  site-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll b -d _site
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Test site
+        run: |
+          bundle exec htmlproofer _site \
+            --disable-external \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
