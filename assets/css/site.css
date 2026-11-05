@@ -571,6 +571,25 @@ footer.site-footer {
 
 /* ----- 404 ----- */
 .text-center h1 { margin-bottom: var(--space-3); }
+.game-frame {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  height: 800px;
+  margin: var(--space-5) auto 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+/* The game needs 320px, more than .wrap leaves on the narrowest phones. */
+@media (max-width: 23rem) {
+  .game-frame {
+    width: calc(100% + 2.5rem);
+    max-width: none;
+    margin-inline: -1.25rem;
+    border-inline: 0;
+    border-radius: 0;
+  }
+}
 
 @media print {
   .site-header, .site-footer, #social-share-section, .pager { display: none; }
