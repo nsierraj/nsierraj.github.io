@@ -17,6 +17,7 @@ timezone: UTC
 
 navbar-links:
   About: "/about/"
+  Games: "/games/"
   Tags: "/tags/"
 
 # og:image fallback (the header brand mark reads /favicon.svg directly)
