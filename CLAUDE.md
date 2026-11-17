@@ -29,7 +29,7 @@ tags: [tag1, tag2]
 ## Structure
 - `_config.yml` — site identity (title, description, avatar), `navbar-links`, `social-network-links`, `share-links-active`, and `site-js`. Colors are NOT here: the theme's color keys (`page-col`, `link-col`, `navbar-col`, ...) are deliberately unset because they feed `beautifuljekyll.css` and would fight dark mode.
 - `index.html` — homepage; Beautiful Jekyll's `home` layout renders the page body as an intro above the post feed.
-- `about.md`, `tags.html` — flat pages wired into `navbar-links` in `_config.yml` (no sidebar-tabs collection).
+- `about.md`, `games.html`, `tags.html` — flat pages wired into `navbar-links` in `_config.yml` (no sidebar-tabs collection).
 - `feed.xml`, `404.html` — ported from the theme's own repo since the gem doesn't auto-package its root-level pages; the RSS footer icon and tag chips link to these internally, so `htmlproofer` depends on them existing.
 - `404.html` also embeds the 1024 game via iframe (`.game-frame` in `site.css`). The game lives in the separate `nsierraj/1024-game` repo; the absolute `src` keeps it working on localhost and at nested paths.
 - Look and feel (adapted from the design language of ivanball.github.io, written from scratch since that repo has no license): `assets/css/site.css` holds the design tokens (type/spacing scale, light + dark palettes via `prefers-color-scheme` and `data-theme`) and all component styles; `assets/js/theme.js` is the theme toggle (localStorage `as-theme`) and mobile nav; `assets/fonts/` self-hosts Inter + JetBrains Mono (OFL, see its README). `_includes/site-theme.html` (added via `head-extra`) sets the theme before paint, preloads fonts and links `site.css` after `beautifuljekyll.css`.

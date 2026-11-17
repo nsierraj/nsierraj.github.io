@@ -500,6 +500,24 @@ img { max-width: 100%; height: auto; }
 .post-card-excerpt { margin: 0 0 var(--space-4); color: var(--text-muted); font-size: var(--step--1); line-height: 1.6; }
 .post-card .chips { position: relative; z-index: 1; }
 
+/* Games page renders the cards inside .prose, which would indent the list and add heading margins. */
+.prose .post-list { padding-left: 0; margin-top: var(--space-5); }
+.prose .post-list > li { margin-bottom: 0; }
+.prose .post-card-title { margin: 0 0 var(--space-2); }
+
+/* Games page: the links row sits above the title's stretched link so each link stays clickable. */
+.game-card .card-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
 /* ----- Tags page ----- */
 .tag-heading {
   margin: var(--space-7) 0 var(--space-3);
